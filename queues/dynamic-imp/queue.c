@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <stdbool.h>
-#include <stdio.h>
 
 typedef int EntryType;
 
@@ -72,32 +71,5 @@ void Remove(EntryType *item,Queue *q)
         free(temp);
 
     }
-
-}
-
-int main()
-{
-    Queue q;
-    Create(&q);
-
-    for (int i = 0; i < 50; i++) {
-        Insert(i+1,&q);
-    }
-
-
-    for (int i = 0; i < 20; i++) {
-        int num;
-        Remove(&num,&q);
-        printf("removed %d\n",num);
-    }
-
-   Node *np;
-
-   np = q.front;
-
-   while (np) {
-        printf("%d\n",np->data);
-        np = np->next;
-   }
 
 }
