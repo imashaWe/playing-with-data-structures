@@ -1,8 +1,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
-#include <stdio.h>
 
-typedef int EnteryType;
+typedef int EntryType;
 
 typedef struct node {
     EnteryType data;
@@ -26,7 +25,7 @@ void CreateStack(Stack *s)
     s->numItems = 0;
 }
 
-void Push(EnteryType item,Stack *s)
+void Push(EntryType item,Stack *s)
 {
     Node *np;
     np = (Node *)malloc(sizeof(Node));
@@ -38,7 +37,7 @@ void Push(EnteryType item,Stack *s)
     s->numItems++;
 }
 
-void Pop(EnteryType *item,Stack *s)
+void Pop(EntryType *item,Stack *s)
 {
     Node *temp;
     temp = s->top;
@@ -51,25 +50,3 @@ void Pop(EnteryType *item,Stack *s)
     free(temp);
 }
 
-int main()
-{
-    Stack s;
-    CreateStack(&s);
-
-    for (int i = 0; i < 20; i++) {
-        Push(i,&s);
-    }
-
-    for (int i = 0; i < 5; i++) {
-        int num;
-        Pop(&num,&s);
-        printf("deleted %d\n",num);
-    }
-
-   Node *np;
-   np = s.top;
-   while (np) {
-        printf("%d\n",np->data);
-        np = np->next;
-   }
-}
