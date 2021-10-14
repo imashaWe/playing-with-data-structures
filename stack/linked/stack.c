@@ -35,6 +35,7 @@ void Push(EntryType item,Stack *s)
 
     s->top = np;
     s->numItems++;
+
 }
 
 void Pop(EntryType *item,Stack *s)

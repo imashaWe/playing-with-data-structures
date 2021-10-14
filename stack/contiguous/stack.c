@@ -6,8 +6,10 @@
 typedef int EntryType;
 
 typedef struct stack {
+
     int top;
     EntryType entry[MAX_SIZE];
+
 } Stack;
 
 void CreateStack(Stack *s)
