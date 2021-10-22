@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdbool.h>
+#include <stdio.h>
 
 typedef int EntryType;
 
@@ -65,7 +66,16 @@ void Remove(EntryType *item,Queue *q)
 
         *item = temp->data;
 
-        q->front = q->front->next;
+        if (q->front == q->rear) {
+
+            q->front = q->rear = NULL;
+
+        } else {
+
+             q->front = q->front->next;
+
+        }
+
         q->count--;
 
         free(temp);
