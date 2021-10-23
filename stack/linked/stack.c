@@ -33,7 +33,7 @@ void Push(EntryType item,Stack *s)
     if(np==NULL){
         printf("Stack is full.");
         exit(1);
-
+    }
     np->data = item;
     np->next = s->top;
 
@@ -49,14 +49,14 @@ void Pop(EntryType *item,Stack *s)
         exit(1);
     }else{
         Node *temp;
-    temp = s->top;
+        temp = s->top;
 
-    s->top = s->top->next;
-    s->numItems--;
+        s->top = s->top->next;
+        s->numItems--;
 
-    *item = temp->data;
+        *item = temp->data;
 
-    free(temp);
+        free(temp);
     }
 
 }
