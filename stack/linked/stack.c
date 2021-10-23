@@ -30,6 +30,10 @@ void Push(EntryType item,Stack *s)
     Node *np;
     np = (Node *)malloc(sizeof(Node));
 
+    if(np==NULL){
+        printf("Stack is full.");
+        exit(1);
+
     np->data = item;
     np->next = s->top;
 
@@ -40,7 +44,11 @@ void Push(EntryType item,Stack *s)
 
 void Pop(EntryType *item,Stack *s)
 {
-    Node *temp;
+     if(IsStackEmpty(s)){
+        printf("Stack is empty.");
+        exit(1);
+    }else{
+        Node *temp;
     temp = s->top;
 
     s->top = s->top->next;
@@ -49,5 +57,7 @@ void Pop(EntryType *item,Stack *s)
     *item = temp->data;
 
     free(temp);
+    }
+
 }
 
